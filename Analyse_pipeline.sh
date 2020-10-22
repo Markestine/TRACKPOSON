@@ -1,43 +1,38 @@
 #####
-#Date : 20 décembre 2016
 # Automatic analysis of TRACKPOSON output
 #####
 
 #!/usr/bin/bash
 
-#threshold 2 instead of threashold 5
-# for file in *sort.bed;do out=$(echo $file | sed -e "s/\.sort/\_per10kb/");bedtools coverage -counts -b $file -a  ~/Bureau/Database/IRGSP-1.0_10kbpwindows.bed | awk  -F "\t" '{if ($4>=2){print $0}}' > coveragebed\_$out;done
 
-
-
-#nom de la famille te analysé
+#name of TE familly
 te=fam54
 echo $te
 
-#on analyse seulemement coveragebed files
+#only coveragebed analyzed
 mkdir final_cov2
 mv coveragebed_* final_cov2
 cd final_cov2
 
-#recupeartion de toutes les insertions du te donné
+#all TE insertion 
 for file in *bed;do awk -F "\t" '{print $1"_"$2"_"$3}' $file;done | sort -u > all_insertion_$te.names
-#nb tot fenetre insertion
+#umber of TE insertion
 wc -l all_insertion_$te.names
 
-#recupeartion de toutes les insertions du te donné avec seuil 5
+#Retrieve insertion with minimum of coverage at 5
 for file in coveragebed_*;do awk -F "\t" '{if ($4>=5){print $1"_"$2"_"$3}}' $file;done | sort -u  > all_position_cov5_$te.names
 wc -l all_position_cov5_$te.names
 
-#reformatage des sorties
+#reformat output
 for file in *bed;do n=$(echo $file | sed -e "s/coveragebed_//" | sed -e "s/\-vs-.*_per10kb.bed//"); awk -F "\t" '{print $1"_"$2"_"$3}' $file > $n.txt;done
 
-#suppression des fichiers vides
+#delete empty files
 find ../final_cov2/ -size 0 -exec rm -f {} \;
 
-#script R matrice
-R CMD BATCH "--args $te" /home/mchristine/Bureau/3000g/Analyse_pipeline.R
+#Create final matrice with R 
+R CMD BATCH "--args $te" Analyse_pipeline.R
 
-###reformatage de la matrice
+###Reformat the matrix
 sed -e "s/\.txt//g" matrice_final.csv | sed -e "s/FALSE/0/g" | sed -e "s/TRUE/1/g" | sed -e "s/\-/\_/g" | sed -e "s/\./\_/g" | awk 'NR<2{print $0;next}{print $0| "sort -k1,1V"}'  > matrice_final_$te.csv
 
 
