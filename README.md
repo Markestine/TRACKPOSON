@@ -2,7 +2,7 @@
 Pipeline to detect transposable elements (TEs) insertions polymorphism
 
 Trackposon is a pipeline to detect TEs insertions with paired-end raw data in the 3000 rice genomes.  
-Retrotranspositional landscape of Asian rice revealed by 3000 genomes,Carpentier et al, Nature Communications, 2019 ⟨10.1038/s41467-018-07974-5⟩
+Retrotranspositional landscape of Asian rice revealed by 3000 genomes, Carpentier et al, Nature Communications, 2019 ⟨10.1038/s41467-018-07974-5⟩
 
 ---------------------
 Requirements
