@@ -30,7 +30,7 @@ makeblastdb -in $ref.fa -dbtype nucl -title $db_title
 bedtools make windows -g $genome_file -w 10000 >  $genome_ref_10kbwindows.bed
 
 The genome_file should tab delimited and structured as follows:  
-<chromName><TAB><chromSize>  
+chromName chromSize  
 For example :  
 Chr1    249250621  
 Chr2    243199373  
