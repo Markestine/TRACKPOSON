@@ -16,7 +16,8 @@ Softwares
 
 --------------------
 Files input
-- Paired-end data from resequencing genome
+- Paired-end data from resequencing genome\n
+
 Noted : the name of fast files will be like this $file_1.fq & $file_2.fq
 
 - bowtie2 index for your TE reference sequence
