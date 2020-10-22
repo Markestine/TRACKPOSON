@@ -16,24 +16,24 @@ Softwares
 
 --------------------
 Files input
-- Paired-end data from resequencing genome\n
+- Paired-end data from resequencing genome  
+Noted : the name of fast files will be like this $file_1.fq & $file_2.fq  
 
-Noted : the name of fast files will be like this $file_1.fq & $file_2.fq
-
-- bowtie2 index for your TE reference sequence
+- bowtie2 index for your TE reference sequence  
 bowtie2-build $fa $name_index
 
--  blast+ database from the reference genome
+-  blast+ database from the reference genome  
 makeblastdb -in $ref.fa -dbtype nucl -title $db_title
 
-- 10kb windows bed file from the reference genome
+- 10kb windows bed file from the reference genome  
 bedtools make windows -g $genome_file -w 10000 >  $genome_ref_10kbwindows.bed
-The genome file should tab delimited and structured as follows:
- <chromName><TAB><chromSize>
-For example, Human (hg19):
-chr1    249250621
-chr2    243199373
+
+The genome_file should tab delimited and structured as follows:  
+<chromName><TAB><chromSize>  
+For example :  
+Chr1    249250621  
+Chr2    243199373  
 
 
-Change the path for your own files in TRACKPOSON.sh
-and after run TRACKPOSON (./TRACKPOSON.sh)
+Change the path for your own files in TRACKPOSON.sh  
+and after run TRACKPOSON (./TRACKPOSON.sh)  
