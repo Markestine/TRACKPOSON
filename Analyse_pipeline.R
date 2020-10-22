@@ -1,15 +1,14 @@
 #####
-#Date : 20 décembre 2016
-# Analyse automatique des résultats du pipeline 3000genomes
+# Automatic analysis of TRACKPOSON output
 #####
 
-#elimination des warning
+#warning eliminations
 options(warn=-1)
 
-#recuperation des arguments
+#arguments retrieve
 args <- commandArgs(trailingOnly = TRUE)
 
-#TE family
+#TE family name
 te<-as.character(args[1])
 
 inputFile<-try(system("ls *txt",intern=TRUE))
@@ -28,11 +27,11 @@ for (i in 1:length(files)){
  }
 colnames(M)<-c("insertion",files)
 
-#pos cov5
+#TE insertion with minimum coverage at 5
 pos<-paste("all_position_cov5_",te,".names",sep="")
 POS<-read.table(pos,sep="\n",h=F)
 
-#Matrice final
+#FInal matrice
 M2<-M[which(M$insertion %in% POS$V1),]
 write.table(M2,file="matrice_final.csv",sep="\t",row.names=F,col.names=T,quote=F)
 
