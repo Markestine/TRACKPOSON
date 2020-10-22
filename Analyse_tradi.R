@@ -1,12 +1,13 @@
 #####
-#Date : 20 décembre 2016
-# Analyse automatique des résultats du pipeline 3000genomes
+# Automatic analysis for 3000 rice genomes - traditional varieties
+#Create histogram : number of TE insertion by varieties
+#                   number of varieties by TE insertion
 #####
 
-#elimination des warning
+#warnings elimination
 options(warn=-1)
 
-#recuperation des arguments
+#arguments retrieve
 args <- commandArgs(trailingOnly = TRUE)
 
 #TE family
@@ -17,8 +18,8 @@ M<-read.table(mat,sep="\t",h=T)
 tmat<-as.data.frame(t(M))
 tmat$varieties<-row.names(tmat)
 REF<-tmat
-
-tradi<-read.table("/home/mchristine/Bureau/3000g/all_names_3K_Traditional.txt",sep="\n",h=F)
+#name of traditional rice varieties
+tradi<-read.table("all_names_3K_Traditional.txt",sep="\n",h=F)
 
 REFT<-REF[which(REF$varieties %in% tradi$V1),]
 colnames(REFT)<-c(as.vector(M[,1]),"varieties")
