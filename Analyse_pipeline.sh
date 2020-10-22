@@ -1,6 +1,6 @@
 #####
 #Date : 20 décembre 2016
-# Analyse automatique des résultats du pipeline 3000genomes
+# Automatic analysis of TRACKPOSON output
 #####
 
 #!/usr/bin/bash
