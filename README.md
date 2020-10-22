@@ -2,7 +2,8 @@
 Pipeline to detect transposable elements (TEs) insertions polymorphism
 
 Trackposon is a pipeline to detect TEs insertions with paired-end raw data.
-———————————————————
+
+---------------------
 Requirements
 
 Softwares
