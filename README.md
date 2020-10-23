@@ -44,12 +44,3 @@ and after run TRACKPOSON (TRACKPOSON.sh)
 Analysis of TRACKPOSON output
 
 - Analyse_pipeline.sh : create a final matrix of presence or absence TIPs for each TE family (Analyse_pipeline.R) and draw 2 histograms for the distribution of TEs insertion in 3000 rice genome dataset (Analyse_tradi.R)  
-
-
-
-
-
-
-
-
-An
