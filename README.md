@@ -20,7 +20,7 @@ Files input
 - Paired-end data from resequencing genome  
 Noted : the name of fast files will be like this $file_1.fq & $file_2.fq  
 
-- bowtie2 index for your TE reference sequence  
+- bowtie2 index for your TE reference sequence (the 32 TE families consensus are in fasta file 32_TE_families_TRACKPOSON_NC_Carpentier_et_al.fa)
 bowtie2-build $fa $name_index
 
 -  blast+ database from the reference genome  
@@ -37,4 +37,19 @@ Chr2    243199373
 
 
 Change the path for your own files in TRACKPOSON.sh  
-and after run TRACKPOSON (./TRACKPOSON.sh)  
+and after run TRACKPOSON (TRACKPOSON.sh)  
+
+
+--------------------
+Analysis of TRACKPOSON output
+
+- Analyse_pipeline.sh : create a final matrix of presence or absence TIPs for each TE family (Analyse_pipeline.R) and draw 2 histograms for the distribution of TEs insertion in 3000 rice genome dataset (Analyse_tradi.R)  
+
+
+
+
+
+
+
+
+An
