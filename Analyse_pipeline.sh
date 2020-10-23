@@ -37,4 +37,4 @@ sed -e "s/\.txt//g" matrice_final.csv | sed -e "s/FALSE/0/g" | sed -e "s/TRUE/1/
 
 
 #script R traditionel + histo
-R CMD BATCH "--args $te" /home/mchristine/Bureau/3000g/Analyse_tradi.R
+R CMD BATCH "--args $te" Analyse_tradi.R
