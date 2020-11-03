@@ -39,6 +39,12 @@ Chr2    243199373
 Change the path for your own files in TRACKPOSON.sh  
 and after run TRACKPOSON (TRACKPOSON.sh)  
 
+--------------------
+Step 1 - Run TRACKPOSON
+bash TRACKPOSON.sh
+
+Step2 - Automatic anaysis of output
+bash Analyse_pipeline.sh
 
 --------------------
 Analysis of TRACKPOSON output
