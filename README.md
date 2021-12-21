@@ -27,7 +27,7 @@ bowtie2-build $fa $name_index
 makeblastdb -in $ref.fa -dbtype nucl -title $db_title
 
 - 10kb windows bed file from the reference genome  
-bedtools make windows -g $genome_file -w 10000 >  $genome_ref_10kbwindows.bed
+bedtools makewindows -g $genome_file -w 10000 >  $genome_ref_10kbwindows.bed
 
 The genome_file should tab delimited and structured as follows:  
 chromName chromSize  
